@@ -3822,6 +3822,7 @@ extern int slurm_free_msg_data(slurm_msg_type_t type, void *data)
 		break;
 	case REQUEST_SIB_JOB_WILL_RUN:
 	case REQUEST_SIB_SUBMIT_BATCH_JOB:
+	case REQUEST_SIB_RESOURCE_ALLOCATION:
 		slurm_free_sib_msg(data);
 		break;
 	case RESPONSE_JOB_WILL_RUN:
@@ -4429,6 +4430,8 @@ rpc_num2string(uint16_t opcode)
 		return "REQUEST_SIB_JOB_WILL_RUN";
 	case REQUEST_SIB_SUBMIT_BATCH_JOB:
 		return "REQUEST_SIB_SUBMIT_BATCH_JOB";
+	case REQUEST_SIB_RESOURCE_ALLOCATION:
+		return "REQUEST_SIB_RESOURCE_ALLOCATION";
 	case RESPONSE_JOB_WILL_RUN:
 		return "RESPONSE_JOB_WILL_RUN";
 	case REQUEST_JOB_ALLOCATION_INFO:
